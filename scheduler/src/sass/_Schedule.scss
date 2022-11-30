@@ -1,0 +1,22 @@
+    #schedule{
+        width:95vw;
+        table{  
+            width:100%;
+            border-style:solid;
+           
+            tr{
+                background-color: lightgreen;
+              
+                
+                td{
+                    height: 4em;
+                    width:6em;
+                    .userNote{
+                       width:inherit;
+                      
+                       top:4.5%;
+                    }
+                }
+            }
+        }
+    }

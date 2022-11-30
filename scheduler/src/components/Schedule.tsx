@@ -1,8 +1,32 @@
+import { useState } from "react"
+
 const Schedule = () => {
-return(<div>
+
+const [numberOfClickedFields, setnumberOfClickedFields]= useState(0)
+
+    const editField = (e:any) =>{
+        var clickedField = e.target
+    
+        if(e.target.nodeName == "TD"){
+          
+        let newId:string =  "clickedField" + numberOfClickedFields
+        setnumberOfClickedFields(numberOfClickedFields+1)
+        clickedField.id += newId
+       
+        let newUserInput = document.createElement("input");
+        newUserInput.className += "userNote"
+
+        let myElement = document.getElementById(newId)
+        console.log(myElement)
+            myElement?.appendChild(newUserInput)
+     
+    }
+    }
+
+return(<div id="schedule" onClick={editField}>
     <table>
-    <tr>
-        <th>Time</th>
+        <thead> 
+        
         <th>Monday</th>
         <th>Tuesday</th>
         <th>Wednesday</th>
@@ -10,18 +34,12 @@ return(<div>
         <th>Friday</th>
         <th>Saturday</th>
         <th>Sunday</th>
-    </tr>
+    </thead>
+  
+    
     <tr>
-        <td>Morning</td>
+        
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Midday</td>
         <td></td>
         <td></td>
         <td></td>
@@ -30,16 +48,8 @@ return(<div>
         <td></td>
     </tr>
     <tr>
-        <td>Afternoon</td>
+       
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Evening</td>
         <td></td>
         <td></td>
         <td></td>
@@ -48,7 +58,18 @@ return(<div>
         <td></td>
     </tr>
     <tr>
-        <td>Night</td>
+      
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
