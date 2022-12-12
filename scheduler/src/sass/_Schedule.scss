@@ -3,18 +3,25 @@
         table{  
             width:100%;
             border-style:solid;
-           
-            tr{
-                background-color: lightgreen;
-              
-                
-                td{
+            thead{
+                tr{
+                    th{
+                    background-color:pink;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    background-color: lightgreen;
+                    td{
                     height: 4em;
                     width:6em;
-                    .userNote{
-                       width:inherit;
-                      
-                       top:4.5%;
+                    
+                   
+                    input{
+                        
+                        width:70%;
+                    }
                     }
                 }
             }
