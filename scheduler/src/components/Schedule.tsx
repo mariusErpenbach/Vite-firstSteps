@@ -10,25 +10,33 @@ const [numberOfNotes, setNumberOfNotes]= useState (0)
     const displayMessage = (e:any) => {
         let clickedField = e.target.parentNode
         let newText:string = e.target.value
+        if (newText.length>0){
+        //create a display box for the new note
+        let newNoteBox = document.createElement("div")
         // post phrase to parent element
         let newPhrase = document.createElement("p")
         let newId = "note" + numberOfNotes
         newPhrase.id = newId;
-        setNumberOfNotes(numberOfNotes+1)
+        setNumberOfNotes(numberOfNotes+1) 
         newPhrase.textContent = newText;
         // add remove note button
-        let newRemoveButton = document.createElement("div")
-        newRemoveButton.innerHTML = "O"
+        let newRemoveButton = document.createElement("i")
+        newRemoveButton.className = "fas fa-times"
         newRemoveButton.onclick = () => {
             let noteToDelete:any = document.getElementById(newId)
             let parentElement = noteToDelete.parentNode;
-            parentElement?.removeChild(noteToDelete)
+            let grandParent = parentElement.parentNode
+            grandParent?.removeChild(parentElement)
         }
         // append childs to parents
-        newPhrase.appendChild(newRemoveButton)
-        clickedField.appendChild(newPhrase)
+        newNoteBox.appendChild(newPhrase)
+        newNoteBox.appendChild(newRemoveButton)
+        clickedField.appendChild(newNoteBox)
         // remove inputfield
         clickedField.removeChild(e.target)
+        } else {
+            clickedField.removeChild(e.target)
+        }
     }
 
     const checkPressedKey = (e:any) =>{
@@ -41,7 +49,7 @@ const [numberOfNotes, setNumberOfNotes]= useState (0)
     const editField = (e:any) =>{
         var clickedField = e.target
         if(clickedField.nodeName == "TD"){ // check if clicked field was an TD 
-        let newElement = document.createElement("input");
+        let newElement = document.createElement("textarea");
         newElement.onkeyup = checkPressedKey
         newElement.placeholder = "Enter your note friend"
         newElement.onblur = displayMessage // onblur event to leave a node when input has finished

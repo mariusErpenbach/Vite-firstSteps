@@ -14,16 +14,31 @@
                 tr{
                     background-color: lightgreen;
                     td{
-                    height: 4em;
-                    width:6em;
+                    max-width:5em;
+                    height:5em;
+                    overflow-wrap:break-word;
+                    text-overflow:clip;    
+
+                        div{
+                            background-color:orange;
+                            width:95%;
+                            
+                       
+                            p{
+                                background-color:lightblue;
+
+                            }
+                            i{
+                              
+                            }
+                        }
+                        textarea{ 
+                  
+                        }
+                    }
                     
-                   
-                    input{
-                        
-                        width:70%;
-                    }
-                    }
                 }
             }
         }
     }
+   
