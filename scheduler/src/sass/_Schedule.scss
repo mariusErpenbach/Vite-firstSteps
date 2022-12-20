@@ -1,39 +1,51 @@
     #schedule{
         width:95vw;
         table{  
-            width:100%;
-            border-style:solid;
+           background-color:rgb(204, 197, 134);
+          
             thead{
                 tr{
                     th{
-                    background-color:pink;
+                    background-color:rgba(216, 192, 255, 0.842);
+                   
                     }
                 }
             }
             tbody{
                 tr{
                     background-color: lightgreen;
+                  
                     td{
-                    max-width:5em;
-                    height:5em;
+                    height:3em;
+                    width:5em;
                     overflow-wrap:break-word;
                     text-overflow:clip;    
 
                         div{
-                            background-color:orange;
-                            width:95%;
-                            
-                       
-                            p{
-                                background-color:lightblue;
-
+                            background-color:grey;
+                            position:relative;
+                            h3{
+                                font-size:0.6em;
+                                background-color:antiquewhite;
+                                margin-bottom:0.5%;
                             }
                             i{
+                                margin-left:95%;
                               
+                                display:inline-block;
+                                position:absolute;
+                                top:0;
+                                right:0;
+                                font-size:0.6em;
                             }
+                          p{
+                            margin-top:0;
+                        background-color:moccasin;
+                            }
+                            
                         }
                         textarea{ 
-                  
+                            width:6em;
                         }
                     }
                     

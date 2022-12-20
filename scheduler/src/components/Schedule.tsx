@@ -3,7 +3,7 @@ import { useState } from "react"
 
 const Schedule = () => {
 
-const [numberOfNotes, setNumberOfNotes]= useState (0)
+const [numberOfNotes, setNumberOfNotes]= useState (1)
 
     
 
@@ -13,6 +13,9 @@ const [numberOfNotes, setNumberOfNotes]= useState (0)
         if (newText.length>0){
         //create a display box for the new note
         let newNoteBox = document.createElement("div")
+        //add node#1 to h1
+        let newHeader = document.createElement("h3")
+        newHeader.textContent = "Note#"+numberOfNotes;
         // post phrase to parent element
         let newPhrase = document.createElement("p")
         let newId = "note" + numberOfNotes
@@ -29,8 +32,10 @@ const [numberOfNotes, setNumberOfNotes]= useState (0)
             grandParent?.removeChild(parentElement)
         }
         // append childs to parents
-        newNoteBox.appendChild(newPhrase)
+        newNoteBox.appendChild(newHeader)
         newNoteBox.appendChild(newRemoveButton)
+        newNoteBox.appendChild(newPhrase)
+      
         clickedField.appendChild(newNoteBox)
         // remove inputfield
         clickedField.removeChild(e.target)
