@@ -7,9 +7,11 @@ function App() {
 const [puzzlePic, setpuzzlePic] = useState(exampleImage)
 
 
-const detectField = () => {
+
+const addRoster = () => {
   let myBox = document.getElementById("puzzleBox")
-  console.log(myBox.offsetWidth)
+  console.log("width of my element is: " + myBox.offsetWidth)
+console.log("height of my element is " + myBox.offsetHeight)
 }
 
   return (
@@ -17,7 +19,7 @@ const detectField = () => {
     <div id="puzzleBox">
      <img src={puzzlePic} alt="your puzzle"/>
      </div>
-     <button onClick={detectField}> detect Field</button>
+     <button onClick={addRoster}> detect Field</button>
     </div>
   )
 }
